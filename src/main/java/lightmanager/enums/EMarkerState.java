@@ -1,4 +1,4 @@
-package lightmanager;
+package lightmanager.enums;
 
 /**
  * Beschreibt den Zustand eines Markers.

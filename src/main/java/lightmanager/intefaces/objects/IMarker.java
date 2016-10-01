@@ -1,4 +1,7 @@
-package lightmanager;
+package lightmanager.intefaces.objects;
+
+import lightmanager.enums.EMarkerState;
+import lightmanager.listeners.IMarkerListener;
 
 /**
  * Stellt einen Marker dar, welcher einen Marker-Zustand annehmen kann.
@@ -23,11 +26,11 @@ public interface IMarker extends ILightManagerObject
      * Fügt einen ChangeListener hinzu
      * @param pListener hinzuzufügender Listener
      */
-    void addChangeListener(MarkerListener pListener);
+    void addChangeListener(IMarkerListener pListener);
 
     /**
      * Entfernt einen ChangeListener
      * @param pListener zu entfernender ChangeListener
      */
-    void removeChangeListener(MarkerListener pListener);
+    void removeChangeListener(IMarkerListener pListener);
 }

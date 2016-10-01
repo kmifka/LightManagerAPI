@@ -1,11 +1,11 @@
-package lightmanager;
+package lightmanager.enums;
 
 /**
- * Beschreibt den Typen des Aktors.
+ * Beschreibt den Steuertyp des Aktors.
  *
  * @author Korbinian, 23.09.16
  */
-public enum EActorType
+public enum EActorControlType
 {
     /**
      * Ein/Aus Aktoren
@@ -15,15 +15,15 @@ public enum EActorType
     /**
      * Dimmbare Aktoren
      */
-    DIMMER,
+    REGULATOR,
 
     /**
      * Infrarot Aktoren
      */
-    IR,
+    SENDER,
 
     /**
-     * Alle Unbekannten Aktoren
+     * Nicht unterstützte Aktoren
      */
-    UNDEFINED
+    NOT_SUPPORTED
 }

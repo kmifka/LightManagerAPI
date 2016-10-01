@@ -1,10 +1,24 @@
+import lightmanager.LightManagerAir;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /**
  * @author Korbinian, 23.09.16
  */
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws MalformedURLException
     {
-
+        try
+        {
+            LightManagerAir air = new LightManagerAir(new File("/Users/Korbinian/Documents/Java/Projekte/SmartHome/config.xml"), new URL("http://192.168.178.114/"));
+            air.addBUSListener(System.out::println);
+        }
+        catch (MalformedURLException pE)
+        {
+            pE.printStackTrace();
+        }
     }
 }

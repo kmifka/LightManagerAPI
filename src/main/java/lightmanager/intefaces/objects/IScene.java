@@ -1,4 +1,4 @@
-package lightmanager;
+package lightmanager.intefaces.objects;
 
 /**
  * Stellt eine Szene (Zusammenschluss mehrerer Anweisungen) dar.
@@ -11,9 +11,4 @@ public interface IScene extends ILightManagerObject
      * Startet die Szene
      */
     void Start();
-
-    /**
-     * Startet die Scene in einem neuen Thread
-     */
-    void StartAsync();
 }

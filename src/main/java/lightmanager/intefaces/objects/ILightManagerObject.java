@@ -1,4 +1,4 @@
-package lightmanager;
+package lightmanager.intefaces.objects;
 
 /**
  * Stellt das zugrunde liegende Objekt von Markern, Aktoren und Szenen dar.
@@ -12,16 +12,4 @@ public interface ILightManagerObject
      * @return den Namen
      */
     String getName();
-
-    /**
-     * Setzt den Namen des Objekts
-     * @param pName der zu setztende Name
-     */
-    void setName(String pName);
-
-    /**
-     * Gibt die ID des Objekts zurück
-     * @return die ID
-     */
-    String getID();
 }
