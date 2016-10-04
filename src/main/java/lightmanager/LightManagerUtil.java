@@ -41,24 +41,27 @@ public class LightManagerUtil
                 actions.add(action);
         }
 
-        switch (type)
+        if (type != null)
         {
-            case XMLConstants.LAN:
-            case XMLConstants.INFRARED:
-                return EActorControlType.SENDER;
+            switch (type)
+            {
+                case XMLConstants.LAN:
+                case XMLConstants.INFRARED:
+                    return EActorControlType.SENDER;
 
-            case XMLConstants.TRUST:
-            case XMLConstants.FS20:
-            case XMLConstants.IKEA:
-            case XMLConstants.UNIROLL:
-            case XMLConstants.SONOS:
-            case XMLConstants.INSTA:
-            //case XMLConstants.ROMOTEC: Achtung: Typ existiert nicht!
+                case XMLConstants.TRUST:
+                case XMLConstants.FS20:
+                case XMLConstants.IKEA:
+                case XMLConstants.UNIROLL:
+                case XMLConstants.SONOS:
+                case XMLConstants.INSTA:
+                    //case XMLConstants.ROMOTEC: Achtung: Typ existiert nicht!
 
-                if (_mask(actions, DIM_UP, DIM_TO, DIM_DOWN))
-                    return EActorControlType.REGULATOR;
-                else
-                    return EActorControlType.DEFAULT;
+                    if (_mask(actions, DIM_UP, DIM_TO, DIM_DOWN))
+                        return EActorControlType.REGULATOR;
+                    else
+                        return EActorControlType.DEFAULT;
+            }
         }
 
         return EActorControlType.NOT_SUPPORTED;
@@ -72,27 +75,32 @@ public class LightManagerUtil
     public static EActorType getActorType(Element pElement)
     {
         String type = pElement.getChildText(XMLConstants.TYPE);
-        switch (type)
+
+        if(type != null)
         {
-            case XMLConstants.LAN:
-                return EActorType.LAN;
-            case XMLConstants.INFRARED:
-                return EActorType.INFRARED;
-            case XMLConstants.TRUST:
-                return EActorType.TRUST;
-            case XMLConstants.FS20:
-                return EActorType.FS20;
-            case XMLConstants.IKEA:
-                return EActorType.IKEA;
-            case XMLConstants.UNIROLL:
-                return EActorType.UNIROLL;
-            case XMLConstants.SONOS:
-                return EActorType.SONOS;
-            case XMLConstants.INSTA:
-                return EActorType.INSTA;
-            default:
-                return EActorType.NOT_SUPPORTED;
+            switch (type)
+            {
+                case XMLConstants.LAN:
+                    return EActorType.LAN;
+                case XMLConstants.INFRARED:
+                    return EActorType.INFRARED;
+                case XMLConstants.TRUST:
+                    return EActorType.TRUST;
+                case XMLConstants.FS20:
+                    return EActorType.FS20;
+                case XMLConstants.IKEA:
+                    return EActorType.IKEA;
+                case XMLConstants.UNIROLL:
+                    return EActorType.UNIROLL;
+                case XMLConstants.SONOS:
+                    return EActorType.SONOS;
+                case XMLConstants.INSTA:
+                    return EActorType.INSTA;
+
+            }
         }
+
+        return EActorType.NOT_SUPPORTED;
     }
 
     /**

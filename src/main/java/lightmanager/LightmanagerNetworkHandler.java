@@ -86,7 +86,7 @@ public class LightmanagerNetworkHandler
                 }
                 catch (IOException pE)
                 {
-                    throw new RuntimeException("Fehler beim Empfangen der UDP Nachrichten");
+                    throw new RuntimeException("Fehler beim Empfangen der UDP Nachricht");
                 }
             }).start();
         }

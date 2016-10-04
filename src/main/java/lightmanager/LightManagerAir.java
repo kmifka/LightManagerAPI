@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * Stellt den Lightmanager Air dar.
- * Diese Klasse ich die Hauptklasse der Lightmanager API.
+ * Diese Klasse ist die Hauptklasse der Lightmanager API.
  *
  * Über diese Klasse können alle Zonen, Szenen und Marker des LMAirs geladen werden.
  *

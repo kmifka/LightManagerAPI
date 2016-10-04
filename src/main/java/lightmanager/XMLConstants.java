@@ -46,5 +46,7 @@ public class XMLConstants
     public static final String UNIROLL = "uniroll";
     public static final String SONOS = "sonos";
     public static final String INSTA = "insta";
+    public static final String SCENES = "lightscenes";
+    public static final String SCENE = "scene";
     //public static final String ROMOTEC = "romotec"; Achtung: Typ existiert nicht!
 }

@@ -13,8 +13,8 @@ public class LightManagerMetaData
     private static final String PORT = "HTTP ";
     private static final String LOGIN = "Login ";
     private static final String PASSWORD = "Pass";
-    private static final String FW_VERSION = "FWverion";
-    private static final String HW_VERSION = "HWversion";
+    private static final String FW_VERSION = "FWVersion";
+    private static final String HW_VERSION = "HWVersion";
     private static final String SSID = "SSID";
     private static final String TYPE = "Type";
 
@@ -41,7 +41,7 @@ public class LightManagerMetaData
 
     private String _findValue(String pData, String pIdentifier)
     {
-        return pData.split(pIdentifier)[1].split("\n")[0];
+        return pData.split(pIdentifier)[1].split("\r\n")[0].trim();
     }
 
     /**

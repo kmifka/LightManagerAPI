@@ -10,5 +10,5 @@ public interface IScene extends ILightManagerObject
     /**
      * Startet die Szene
      */
-    void Start();
+    void start();
 }

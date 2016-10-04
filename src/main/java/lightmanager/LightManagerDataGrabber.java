@@ -1,11 +1,13 @@
 package lightmanager;
 
+import lightmanager.actionexecutor.SceneExecutor;
 import lightmanager.intefaces.*;
 import lightmanager.intefaces.objects.IActuator;
 import lightmanager.intefaces.objects.IMarker;
 import lightmanager.intefaces.objects.IScene;
 import lightmanager.intefaces.objects.IZone;
 import lightmanager.objects.Actuator;
+import lightmanager.objects.Scene;
 import lightmanager.objects.Zone;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -56,7 +58,17 @@ class LightManagerDataGrabber implements ILightManagerBasic
 
     public IScene[] getScenes()
     {
-        return new IScene[0];
+        ArrayList<IScene> scenes = new ArrayList<>();
+        Element element = config.getRootElement().getChild(XMLConstants.SCENES);
+        List<Element> xmlScenes = element.getChildren(XMLConstants.SCENE);
+        for (Element child : xmlScenes)
+        {
+            SceneExecutor executor = new SceneExecutor(child);
+            executor.setListener(pSrc -> sendCommand(pSrc.getCommand()));
+            IScene scene = new Scene(executor, child);
+            scenes.add(scene);
+        }
+        return scenes.toArray(new IScene[0]);
     }
 
     /**
