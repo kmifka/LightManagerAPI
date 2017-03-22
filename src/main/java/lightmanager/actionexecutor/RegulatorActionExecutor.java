@@ -46,24 +46,27 @@ public class RegulatorActionExecutor implements IActionExecutor
     @Override
     public void executeAction(EActorActionType pAction, @Nullable Object pData)
     {
-        if (actions.keySet().contains(pAction)
-                && (pAction != EActorActionType.DIM_TO || pData instanceof Integer))
-        {
-            String command = actions.get(pAction);
-            if (pAction == EActorActionType.DIM_TO)
-                command = _getDimCommand((int) pData);
-            listener.send(new Action(command, pAction));
-        }
-        else if(!actions.keySet().contains(pAction) )
+        if (!actions.keySet().contains(pAction))
             throw new RuntimeException("Diese Aktion wird nicht unterstützt -> " + pAction);
-        else
+        if (pAction == EActorActionType.DIM_TO && !(pData instanceof Integer))
             throw new RuntimeException("Es wird ein Dimmwert erwartet -> " + pAction + "; pData=" + pData);
+
+        String command = actions.get(pAction);
+        if (pAction == EActorActionType.DIM_TO)
+            command = _getDimCommand((int) pData);
+        listener.send(new Action(command, pAction));
     }
 
     @Override
     public EActorActionType[] getSupportedActions()
     {
         return actions.keySet().toArray(new EActorActionType[0]);
+    }
+
+    @Override
+    public void setListener(IActionListener pListener)
+    {
+        listener = pListener;
     }
 
     private String _getDimCommand(int pPercent)
@@ -74,11 +77,5 @@ public class RegulatorActionExecutor implements IActionExecutor
                 currPercent = value;
 
         return steps.get(currPercent);
-    }
-
-    @Override
-    public void setListener(IActionListener pListener)
-    {
-        listener = pListener;
     }
 }

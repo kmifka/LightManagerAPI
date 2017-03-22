@@ -1,7 +1,7 @@
 package lightmanager.enums;
 
 /**
- * Beschreibt die Aktion, die ein Actuator ausführen kann.
+ * Beschreibt die Aktionen, die ein Actuator ausführen kann.
  *
  * @author Korbinian, 23.09.16
  */

@@ -5,14 +5,14 @@ package lightmanager;
  *
  * @author Korbinian, 01.10.16
  */
-public class Constants
+class Constants
 {
-    public static final String OK = "OK";
-    public static final String LMAIR = "LMAir";
-    public static final String RECEIVE_IDENTIFIER = "recit=";
-    public static final String HTTP_QUERY = "control?";
-    public static final int RECEIVE_PORT = 20202;
-    public static final int SEND_PORT = 30303;
-    public static final long SENDING_RATE = 170000;
-    public static final String DISCOVERY_CONTENT = "D";
+    static final String OK = "OK";
+    static final String LMAIR = "LMAir";
+    static final String RECEIVE_IDENTIFIER = "recit=";
+    static final String HTTP_QUERY = "control?";
+    static final int RECEIVE_PORT = 20202;
+    static final int SEND_PORT = 30303;
+    static final long SENDING_RATE = 170000;
+    static final String DISCOVERY_CONTENT = "D";
 }

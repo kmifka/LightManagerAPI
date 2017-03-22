@@ -29,7 +29,7 @@ public class LightManagerAir extends LightManagerDataGrabber implements ILightMa
 
     public LightManagerAir(File pConfig, URL pURL)
     {
-        setConfig(pConfig);
+        super(pConfig);
         url = pURL;
         networkHandler = new LightmanagerNetworkHandler(url);
         _checkLMType();

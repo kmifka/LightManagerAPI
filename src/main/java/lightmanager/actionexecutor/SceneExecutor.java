@@ -31,7 +31,7 @@ public class SceneExecutor
     }
 
     /**
-     * Stratet die Szene
+     * Startet die Szene
      */
     public void startScene()
     {

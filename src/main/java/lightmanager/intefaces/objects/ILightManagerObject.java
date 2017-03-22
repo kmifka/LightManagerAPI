@@ -5,7 +5,7 @@ package lightmanager.intefaces.objects;
  *
  * @author Korbinian, 24.09.16
  */
-public interface ILightManagerObject
+interface ILightManagerObject
 {
     /**
      * Gibt den Namen des Objekts zurück

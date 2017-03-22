@@ -25,12 +25,11 @@ public class SenderActionExecutor implements IActionExecutor
                 .getChildText(XMLConstants.PARAM);
     }
 
-
     @Override
     public void executeAction(EActorActionType pAction, @Nullable Object pData)
     {
         if (pAction == EActorActionType.SEND)
-            listener.send(new Action(command, EActorActionType.SEND));
+            listener.send(new Action(command, pAction));
         else
             throw new RuntimeException("Diese Aktion wird nicht unterstützt -> " + pAction);
     }

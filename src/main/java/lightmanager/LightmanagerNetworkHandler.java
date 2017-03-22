@@ -11,6 +11,8 @@ import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
+ * Kümmert sich um jegliche Kommunikation zwischen API und Lightmanager über das Netzwerk
+ *
  * @author Korbinian, 01.10.16
  */
 public class LightmanagerNetworkHandler
@@ -86,6 +88,7 @@ public class LightmanagerNetworkHandler
                 }
                 catch (IOException pE)
                 {
+                    receiving.set(false);
                     throw new RuntimeException("Fehler beim Empfangen der UDP Nachricht");
                 }
             }).start();

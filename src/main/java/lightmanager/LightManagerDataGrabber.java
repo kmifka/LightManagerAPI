@@ -27,6 +27,11 @@ class LightManagerDataGrabber implements ILightManagerBasic
     private Document config;
     private LightmanagerNetworkHandler networkHandler;
 
+    public LightManagerDataGrabber(File pConfig)
+    {
+        _setConfig(pConfig);
+    }
+
     public IZone[] getZones()
     {
         ArrayList<IZone> zones = new ArrayList<>();
@@ -84,7 +89,7 @@ class LightManagerDataGrabber implements ILightManagerBasic
      * Setzt die Config.xml Datei
      * @param pConfig
      */
-    final void setConfig(File pConfig)
+    private void _setConfig(File pConfig)
     {
         try
         {
